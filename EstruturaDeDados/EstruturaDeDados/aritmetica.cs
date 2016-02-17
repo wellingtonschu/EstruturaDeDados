@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstruturaDeDados
 {
-    class aritmetica
+    class Aritmetica
     {
         public int soma(int n1, int n2)
         {

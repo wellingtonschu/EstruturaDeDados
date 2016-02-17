@@ -10,7 +10,7 @@ namespace EstruturaDeDados
     {
         static void Main(string[] args)
         {
-            aritmetica minhasContas = new aritmetica();
+            Aritmetica minhasContas = new Aritmetica();
             int num1, num2, resultado;
 
             Console.WriteLine("Digite dois números");
