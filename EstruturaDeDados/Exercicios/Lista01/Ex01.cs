@@ -67,7 +67,7 @@ namespace Exercicios.Lista01
             }
         }
 
-        // verifica se a data est� correta
+        // verifica se a data está correta
         public bool verifica()
         {
             if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && (dia <= 30 && dia > 0))
