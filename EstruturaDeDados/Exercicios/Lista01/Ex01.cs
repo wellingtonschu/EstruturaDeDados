@@ -8,89 +8,123 @@ namespace Exercicios.Lista01
 {
     class Ex01
     {
-        // dados aceitos no calendario como dia mes e ano
-        public int dia;
-        public int mes;
-        public int ano;
-        public String StrNome;
-
-        // pra transformar o mês em data escrita por extenso sendo ingual ao mes jogar por extenso
-        public void NomeMes()
+        //A
+        public bool validaAno(int dia, int mes, int ano)
         {
-            if (mes == 1)
-            {
-                StrNome = "Janeiro";
-            }
-            if (mes == 2)
-            {
-                StrNome = "Fevereiro";
-            }
-            if (mes == 3)
-            {
-                StrNome = "Março";
-            }
-            if (mes == 4)
-            {
-                StrNome = "Abril";
-            }
-            if (mes == 5)
-            {
-                StrNome = "Maio";
-            }
-            if (mes == 6)
-            {
-                StrNome = "Junho";
-            }
-            if (mes == 7)
-            {
-                StrNome = "Julho";
-            }
-            if (mes == 8)
-            {
-                StrNome = "Agosto";
-            }
-            if (mes == 9)
-            {
-                StrNome = "Setembro";
-            }
-            if (mes == 10)
-            {
-                StrNome = "Outubro";
-            }
-            if (mes == 11)
-            {
-                StrNome = "Novembro";
-            }
-            if (mes == 12)
-            {
-                StrNome = "Dezembro";
-            }
-        }
 
-        // verifica se a data está correta
-        public bool verifica()
-        {
-            if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && (dia <= 30 && dia > 0))
-                return true;
-            if ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && (dia <= 31 && dia > 0))
-                return true;
-            if (mes == 2 && dia <= 28 && dia > 0 && ano % 4 != 0)
-                return true;
-            if (mes == 2 && dia <= 29 && dia > 0 && ano % 4 == 0)
+            bool verifica = false;
+
+            if (mes == 02)
+            {
+                if (dia <= 28)
+                {
+                    verifica = true;
+                }
+            }
+            if ((ano % 4 == 0) && (ano % 100 != 0) || (ano % 400 == 0))
+            {
+                if (dia <= 29)
+                {
+                    verifica = true;
+                }
+            }
+            if ((mes == 04) || (mes == 06) || (mes == 9) || (mes == 11))
+            {
+                if (dia <= 30)
+                {
+                    verifica = true;
+                }
+            }
+            if ((mes == 01) || (mes == 03) || (mes == 05) || (mes == 07) || (mes == 8) || (mes == 10) || (mes == 12))
+            {
+                if (dia <= 31)
+                {
+                    verifica = true;
+                }
+            }
+            if (verifica == true)
                 return true;
             else
                 return false;
-
         }
 
-
-        public void transforma(String data)
+        //B
+        public bool validaAnoString(String data)
         {
-            String[] stringDividido = data.Split('/');//quebra a String
-            this.dia = Convert.ToInt32(stringDividido[0]);
-            this.mes = Convert.ToInt32(stringDividido[1]);
-            this.ano = Convert.ToInt32(stringDividido[2]);
+            String[] datasplit = data.Split('/');
+            int dia = Convert.ToInt32(datasplit[0]);
+            int mes = Convert.ToInt32(datasplit[1]);
+            int ano = Convert.ToInt32(datasplit[2]);
+            bool verifica = false;
 
+            if (mes == 02)
+            {
+                if (dia <= 28)
+                {
+                    verifica = true;
+                }
+            }
+            if (ano % 400 == 0)
+            {
+                if (dia <= 29)
+                {
+                    verifica = true;
+                }
+            }
+            if ((mes == 04) || (mes == 06) || (mes == 9) || (mes == 11))
+            {
+                if (dia <= 30)
+                {
+                    verifica = true;
+                }
+            }
+            if ((mes == 01) || (mes == 03) || (mes == 05) || (mes == 07) || (mes == 8) || (mes == 10) || (mes == 12))
+            {
+                if (dia <= 31)
+                {
+                    verifica = true;
+                }
+            }
+            if (verifica == true)
+                return true;
+            else
+                return false;
+        }
+
+        //C
+        public String escreveData(String data)
+        {
+            String[] datasplit = data.Split('/');
+            int dia = Convert.ToInt32(datasplit[0]);
+            int mes = Convert.ToInt32(datasplit[1]);
+            int ano = Convert.ToInt32(datasplit[2]);
+
+            String stringMes = "Janeiro";
+
+            if (mes == 2)
+                stringMes = "Fevereiro";
+            if (mes == 3)
+                stringMes = "Março";
+            if (mes == 4)
+                stringMes = "Abril";
+            if (mes == 5)
+                stringMes = "Maio";
+            if (mes == 6)
+                stringMes = "Junho";
+            if (mes == 7)
+                stringMes = "Julho";
+            if (mes == 8)
+                stringMes = "Agosto";
+            if (mes == 9)
+                stringMes = "Setembro";
+            if (mes == 10)
+                stringMes = "Outubro";
+            if (mes == 11)
+                stringMes = "Novembro";
+            if (mes == 12)
+                stringMes = "Dezembro";
+
+            return dia + " de " + stringMes + " de " + ano;
         }
     }
 }
