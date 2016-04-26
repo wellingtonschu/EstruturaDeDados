@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lista01\Ex01.cs" />
+    <Compile Include="Lista06\Ex01.cs" />
+    <Compile Include="Lista06\Ex02.cs" />
+    <Compile Include="Lista06\Ex03.cs" />
+    <Compile Include="Lista06\Ex04.cs" />
+    <Compile Include="Lista06\Ex06.cs" />
+    <Compile Include="Lista06\Ex07.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
