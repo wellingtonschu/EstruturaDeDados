@@ -18,6 +18,7 @@ namespace Sort
 
             Console.WriteLine("Initial Array");
             Console.WriteLine(String.Join(" ", arr));
+            Console.ReadKey();
 
         }
     }
