@@ -14,11 +14,13 @@ namespace Trabalho
             selectionSort s = new selectionSort();
             insertionSort i = new insertionSort();
             mergeSort m = new mergeSort();
+            quickSort q = new quickSort();
 
             int[] arrayBubble = { 10, 6, 8, 3, 1, 5, 9, 7, 4, 2 };
             int[] arraySelection = { 10, 6, 8, 3, 1, 5, 9, 7, 4, 2 };
             int[] arrayInsertion = { 10, 6, 8, 3, 1, 5, 9, 7, 4, 2 };
             int[] arrayMerge = { 10, 6, 8, 3, 1, 5, 9, 7, 4, 2 };
+            int[] arrayQuick = { 10, 6, 8, 3, 1, 5, 9, 7, 4, 2 };
 
             Console.WriteLine("Array inicial - Bubble Sort");
             Console.WriteLine(String.Join(" ", arrayBubble));
@@ -40,6 +42,10 @@ namespace Trabalho
             m.MergeSort(arrayMerge, 0, arrayMerge.Length - 1);
             Console.ReadKey();
 
+            Console.WriteLine("\nArray inicial - Quick Sort");
+            Console.WriteLine(String.Join(" ", arrayQuick));
+            q.QuickSort(arrayQuick, 0, arrayQuick.Length - 1);
+            Console.ReadKey();
         }
     }
 }
