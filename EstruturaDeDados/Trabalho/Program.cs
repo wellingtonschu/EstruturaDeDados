@@ -12,17 +12,23 @@ namespace Trabalho
         {
             bubbleSort b = new bubbleSort();
             selectionSort s = new selectionSort();
+            insertionSort i = new insertionSort();
 
             int[] array = { 10, 8, 3, 1, 9, 7, 4, 3 };
 
-            Console.WriteLine("Array inicial");
+            Console.WriteLine("Array inicial - Bubble Sort");
             Console.WriteLine(String.Join(" ", array));
             b.BubbleSort(array);
             Console.ReadKey();
 
-            Console.WriteLine("Array inicial");
+            Console.WriteLine("\nArray inicial - Selection Sort");
             Console.WriteLine(String.Join(" ", array));
             s.SelectionSort(array);
+            Console.ReadKey();
+
+            Console.WriteLine("\nArray inicial - Insertion Sort");
+            Console.WriteLine(String.Join(" ", array));
+            i.InsertionSort(array);
             Console.ReadKey();
 
         }
